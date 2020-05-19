@@ -11,12 +11,12 @@
 
 static const char* termux_rewrite_executable(const char* filename, char* buffer, int buffer_len)
 {
-	strcpy(buffer, "/data/data/com.termux/files/usr/bin/");
+	strcpy(buffer, "/data/data/com.astrosohu/files/usr/bin/");
 	char* bin_match = strstr(filename, "/bin/");
 	if (bin_match == filename || bin_match == (filename + 4)) {
 		// We have either found "/bin/" at the start of the string or at
 		// "/xxx/bin/". Take the path after that.
-		strncpy(buffer + 36, bin_match + 5, buffer_len - 37);
+		strncpy(buffer + 39, bin_match + 5, buffer_len - 40);
 		filename = buffer;
 	}
 	return filename;
